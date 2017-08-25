@@ -1,12 +1,11 @@
 fs = require 'fs'
+{execSync} = require 'child_process'
 util = require 'util'
 path = require 'path'
 {Buffer} = require 'buffer'
 iconv  = require 'iconv-lite'
 JSZip = require "jszip"
 FileKit = require "./FileKit"
-
-execSync = require 'exec-sync'
 
 FIELDSIZE = 
     C: 255
@@ -71,9 +70,11 @@ class DBFWriter
             throw new Error "the zip file aready exist!"
         @write()
         cmd = "zip -jqm #{FileKit.makeSuffix @pathName, "zip"} #{FileKit.makeSuffix @pathName, "dbf"}"
-        result = execSync cmd, true
+        # result = execSync cmd, true
+        result = execSync cmd
         throw new Error result.stderr if result.stderr
         throw new Error result.stdout unless fs.existsSync(FileKit.makeSuffix @pathName, "zip")
+
 
     _generate: ()->
         wsBuffer = new Buffer 32 + 32*@header.length + 1 + @header.totalFieldsLength*@doc.length + 1
