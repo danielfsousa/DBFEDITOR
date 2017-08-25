@@ -1,5 +1,5 @@
 {
-  "name": "dbf-editor",
+  "name": "editor-dbf",
   "version": "0.0.4",
   "description": "help to parse dbf file and write dbf file with size",
   "main": "index.js",
@@ -16,19 +16,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karthidevlpr/DBFEDITOR.git"
+    "url": "git+https://github.com/danielfsousa/DBFEDITOR.git"
   },
   "keywords": [
     "dbf",
     "dbfEditor",
     "dBase"
   ],
-  "author": "karthi",
+  "author": "Daniel Sousa",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/karthidevlpr/DBFEDITOR/issues"
+    "url": "https://github.com/danielfsousa/DBFEDITOR/issues"
   },
-  "homepage": "https://github.com/karthidevlpr/DBFEDITOR#readme",
+  "homepage": "https://github.com/danielfsousa/DBFEDITOR#readme",
   "directories": {
     "test": "test"
   }
